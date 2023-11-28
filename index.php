@@ -5,6 +5,14 @@ class Production {
   public $language;
   public $rating;
 
+  #Construct method + params
+  function __construct(String $_title,String $_lang, $_rating)
+  {
+    $this->setTitle($_title);
+    $this->setLanguage($_lang);
+    $this->setRating($_rating);
+  }
+
   #Setter & getter methods
   public function setRating($_rate) {
     $int_rate = intval($_rate);
@@ -49,12 +57,16 @@ class Production {
     return $this->language;
   }
 
-  #Construct method + params
-  function __construct(String $_title,String $_lang, $_rating)
-  {
-    $this->setTitle($_title);
-    $this->setLanguage($_lang);
-    $this->setRating($_rating);
+  #star function
+  public function spawnStars() {
+    $stars = '';
+    for($i = 0; $i < $this->getRating(); $i++) {
+      $stars .= '<span class="star">&#9733;</span>';
+    }
+    for($i = 0; $i < (5 - $this->getRating()); $i++) {
+      $stars .= '<span class="star">&#9734;</span>';
+    }
+    return $stars;
   }
 }
   
@@ -92,14 +104,7 @@ class Production {
             <h3 class="film-title"><?= $film->getTitle() ?></h3>
             <ul class="film-details">
               <li><?= $film->getLanguage() ?></li>
-              <li>
-                <?php for($i = 0; $i < $film->getRating(); $i++) { ?>
-                  <span class="star" v-for="">&#9733;</span>
-                <?php } ?>
-                <?php for($i = 0; $i < (5 - $film->getRating()); $i++) { ?>
-                  <span class="star" v-for="">&#9734;</span>
-                <?php } ?>
-              </li>
+              <li><?= $film->spawnStars() ?></li>
             </ul>
           </div>
         <?php } ?>
