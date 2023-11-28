@@ -90,7 +90,14 @@ $films = [
             <h3 class="film-title"><?= $film->getTitle() ?></h3>
             <ul class="film-details">
               <li><?= $film->getLanguage() ?></li>
-              <li><?= $film->getRating() ?></li>
+              <li>
+                <?php for($i = 0; $i < $film->getRating(); $i++) { ?>
+                  <span v-for="">&#9733;</span>
+                <?php } ?>
+                <?php for($i = 0; $i < (5 - $film->getRating()); $i++) { ?>
+                  <span v-for="">&#9734;</span>
+                <?php } ?>
+              </li>
             </ul>
           </div>
         <?php } ?>
