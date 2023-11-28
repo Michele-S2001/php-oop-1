@@ -6,8 +6,8 @@ class Production {
 
   function __construct(String $_title,String $_lang, $_rating)
   {
-    $this->title = $_title;
-    $this->language = $_lang;
+    $this->setTitle($_title);
+    $this->setLanguage($_lang);
     $this->setRating($_rating);
   }
 
@@ -23,8 +23,36 @@ class Production {
     }
   }
 
+  public function setTitle($_title_) {
+    if($_title_ !== '' && trim($_title_) !== '') {
+      $this->title = $_title_;
+    } else {
+      $this->title = 'Titolo non valido o non trovato';
+    }
+  }
+
+  public function setLanguage($_lang_) {
+    if(
+      $_lang_ !== '' && 
+      strlen($_lang_) === 2 &&
+      trim($_lang_) !== ''
+      ) {
+      $this->language = $_lang_;
+    } else {
+      $this->language = 'Lingua non valida o non trovata';
+    }
+  }
+
   public function getRating() {
     return $this->rating;
+  }
+
+  public function getTitle() {
+    return $this->title;
+  }
+
+  public function getLanguage() {
+    return $this->language;
   }
 }
 
@@ -39,8 +67,6 @@ $films = [
   $film3,
   $film4
 ];
-
-// var_dump($films);
 ?>
 
 <!DOCTYPE html>
@@ -61,14 +87,14 @@ $films = [
         
         <?php foreach($films as $film) {?>
           <div class="film-accordion">
-            <h3 class="film-title"><?= $film->title ?></h3>
+            <h3 class="film-title"><?= $film->getTitle() ?></h3>
             <ul class="film-details">
-              <li><?= $film->language ?></li>
-              <li><?= $film->rating ?></li>
+              <li><?= $film->getLanguage() ?></li>
+              <li><?= $film->getRating() ?></li>
             </ul>
           </div>
         <?php } ?>
-        
+
       </div>
     </div>
 
