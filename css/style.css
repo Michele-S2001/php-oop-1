@@ -1,0 +1,62 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* palette */
+html{
+  --white: #fff;
+  --green: rgb(3, 173, 148);
+  --grey: #404040;
+}
+
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* utilities */
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* app */ 
+
+.main-title {
+  text-align: center;
+  line-height: 50px;
+  background-color: var(--green);
+  color: var(--white);
+  margin-bottom: 1.3em;
+}
+
+
+.films-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 0 10px;
+}
+
+
+.film-accordion {
+  border: 2px solid var(--grey);
+  border-radius: 1.5rem;
+  padding: 20px;
+}
+
+.film-title {
+  margin-bottom: 0.7em;
+  font-size: 18px;
+}
+
+.film-details {
+  font-size: 16px;
+  list-style-type: circle;
+  padding-left: 20px;
+}
