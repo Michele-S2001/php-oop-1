@@ -1,5 +1,4 @@
 <?php
-
 class Production {
   public $title;
   public $language;
@@ -9,10 +8,10 @@ class Production {
   {
     $this->title = $_title;
     $this->language = $_lang;
-    $this->getRating($_rating);
+    $this->setRating($_rating);
   }
 
-  public function getRating($_rate) {
+  public function setRating($_rate) {
     $int_rate = intval($_rate);
     
     if($int_rate !== 0 && $int_rate <= 10) {
