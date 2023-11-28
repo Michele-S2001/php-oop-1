@@ -14,7 +14,6 @@ class Production {
       $this->rating = $stars_number;
     } else {
       $this->rating = 0;
-      var_dump('no valide $rating value');
     }
   }
   
