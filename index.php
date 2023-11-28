@@ -1,16 +1,11 @@
 <?php
 class Production {
+  #Istance variables
   public $title;
   public $language;
   public $rating;
 
-  function __construct(String $_title,String $_lang, $_rating)
-  {
-    $this->setTitle($_title);
-    $this->setLanguage($_lang);
-    $this->setRating($_rating);
-  }
-
+  #Setter & getter methods
   public function setRating($_rate) {
     $int_rate = intval($_rate);
     
@@ -22,7 +17,7 @@ class Production {
       var_dump('no valide $rating value');
     }
   }
-
+  
   public function setTitle($_title_) {
     if($_title_ !== '' && trim($_title_) !== '') {
       $this->title = $_title_;
@@ -30,38 +25,46 @@ class Production {
       $this->title = 'Titolo non valido o non trovato';
     }
   }
-
+  
   public function setLanguage($_lang_) {
     if(
       $_lang_ !== '' && 
       strlen($_lang_) === 2 &&
       trim($_lang_) !== ''
       ) {
-      $this->language = $_lang_;
-    } else {
-      $this->language = 'Lingua non valida o non trovata';
+        $this->language = $_lang_;
+      } else {
+        $this->language = 'Lingua non valida o non trovata';
+      }
     }
-  }
-
+    
   public function getRating() {
     return $this->rating;
   }
-
+  
   public function getTitle() {
     return $this->title;
   }
-
+  
   public function getLanguage() {
     return $this->language;
   }
+
+  #Construct method + params
+  function __construct(String $_title,String $_lang, $_rating)
+  {
+    $this->setTitle($_title);
+    $this->setLanguage($_lang);
+    $this->setRating($_rating);
+  }
 }
-
-$film1 = new Production('Sully: Miracle On The Hudson', 'en', 8.2);
-$film2 = new Production('Interstellar', 'en', 7);
-$film3 = new Production('The Great Hack', 'en', 10);
-$film4 = new Production('La Vita è Bella', 'it', 8.7);
-
-$films = [
+  
+  $film1 = new Production('Sully: Miracle On The Hudson', 'en', 8.2);
+  $film2 = new Production('Interstellar', 'en', 7);
+  $film3 = new Production('The Great Hack', 'en', 10);
+  $film4 = new Production('La Vita è Bella', 'it', 8.7);
+  
+  $films = [
   $film1,
   $film2,
   $film3,
