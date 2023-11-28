@@ -92,10 +92,10 @@ $films = [
               <li><?= $film->getLanguage() ?></li>
               <li>
                 <?php for($i = 0; $i < $film->getRating(); $i++) { ?>
-                  <span v-for="">&#9733;</span>
+                  <span class="star" v-for="">&#9733;</span>
                 <?php } ?>
                 <?php for($i = 0; $i < (5 - $film->getRating()); $i++) { ?>
-                  <span v-for="">&#9734;</span>
+                  <span class="star" v-for="">&#9734;</span>
                 <?php } ?>
               </li>
             </ul>
