@@ -22,7 +22,7 @@ class Serie extends Production {
       $_seasons_ > 0 &&
       $_seasons_ < 50
       ) {
-        $this->seasons = 'Seasons: ' . $_seasons_;
+        $this->seasons = $_seasons_;
       } else {
         $this->seasons = 'num of seasons not valid or not found';
       }
@@ -30,5 +30,11 @@ class Serie extends Production {
 
   public function getSeasons() {
     return $this->seasons;
+  }
+
+  public function getAdditionInfos() {
+    return [
+      'season' => $this->seasons,
+    ];
   }
 }

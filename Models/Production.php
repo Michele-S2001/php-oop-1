@@ -68,4 +68,8 @@ class Production {
     }
     return $stars;
   }
+
+  public function getAdditionInfos() {
+    return [];
+  }
 }
