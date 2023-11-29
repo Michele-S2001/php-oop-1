@@ -14,9 +14,15 @@
 ### Bonus
 -  crea un layout completo per stampare a schermo una lista di movies
 
-<?php for($i = 0; $i < $film->getRating(); $i++) { ?>
-  <span class="star" v-for="">&#9733;</span>
-<?php } ?>
-<?php for($i = 0; $i < (5 - $film->getRating()); $i++) { ?>
-  <span class="star" v-for="">&#9734;</span>
-<?php } ?>
+## OOB 2nd Day
+- creare una cartella models dove ogni classe avrà il suo file
+- trasferire tutta la classe production in un file dedicato
+- creare due file per due classi distinte "movie" e "serie"
+- "movie" estenderà la classe production e avrà due proprietà
+  - $profit
+  - $duration
+- "serie" estenderà la classe production e avrà una proprietà
+  - $season
+- nel file index si creeranno 5 istanze di movie e 5 istanze di serie
+- uniamo le istanze in un array comune
+- stampo tutto nel layout
