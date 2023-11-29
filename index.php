@@ -60,7 +60,7 @@ $productions = [
               </li>
             </ul>
           </div>
-        <?php var_dump($prod); } ?>
+        <?php } ?>
 
       </div>
     </div>
