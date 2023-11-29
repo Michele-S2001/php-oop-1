@@ -29,7 +29,7 @@ class Production {
     if($_title_ !== '' && trim($_title_) !== '') {
       $this->title = $_title_;
     } else {
-      $this->title = 'Titolo non valido o non trovato';
+      $this->title = 'title not found or not valid';
     }
   }
   
@@ -41,7 +41,7 @@ class Production {
       ) {
         $this->language = $_lang_;
       } else {
-        $this->language = 'Lingua non valida o non trovata';
+        $this->language = 'lang not found or not valid';
       }
     }
     

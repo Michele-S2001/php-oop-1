@@ -1,16 +1,12 @@
 <?php
 require_once __DIR__ . '/Models/Production.php';
-  
-$prod_1 = new Production('Sully: Miracle On The Hudson', 'en', 8.2);
-$prod_2 = new Production('Interstellar', 'en', 7);
-$prod_3 = new Production('The Great Hack', 'en', 10);
-$prod_4 = new Production('La Vita è Bella', 'it', 8.7);
+require_once __DIR__ . '/Models/Movie.php';
+
+$film_1 = new Movie('una notte al museo', 'en', 6.8, 2345000.53 , 180);
 
 $productions = [
-  $prod_1,
-  $prod_2,
-  $prod_3,
-  $prod_4
+  #films & series
+  $film_1
 ];
 ?>
 
