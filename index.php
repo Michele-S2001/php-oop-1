@@ -69,16 +69,16 @@ class Production {
   }
 }
   
-$film1 = new Production('Sully: Miracle On The Hudson', 'en', 8.2);
-$film2 = new Production('Interstellar', 'en', 7);
-$film3 = new Production('The Great Hack', 'en', 10);
-$film4 = new Production('La Vita è Bella', 'it', 8.7);
+$prod_1 = new Production('Sully: Miracle On The Hudson', 'en', 8.2);
+$prod_2 = new Production('Interstellar', 'en', 7);
+$prod_3 = new Production('The Great Hack', 'en', 10);
+$prod_4 = new Production('La Vita è Bella', 'it', 8.7);
   
-$films = [
-  $film1,
-  $film2,
-  $film3,
-  $film4
+$productions = [
+  $prod_1,
+  $prod_2,
+  $prod_3,
+  $prod_4
 ];
 ?>
 
@@ -98,12 +98,12 @@ $films = [
     <div class="container">
       <div class="films-grid">
         
-        <?php foreach($films as $film) {?>
+        <?php foreach($productions as $prod) {?>
           <div class="film-accordion">
-            <h3 class="film-title"><?= $film->getTitle() ?></h3>
+            <h3 class="film-title"><?= $prod->getTitle() ?></h3>
             <ul class="film-details">
-              <li><?= $film->getLanguage() ?></li>
-              <li><?= $film->spawnStars() ?></li>
+              <li><?= $prod->getLanguage() ?></li>
+              <li><?= $prod->spawnStars() ?></li>
             </ul>
           </div>
         <?php } ?>
