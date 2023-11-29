@@ -19,7 +19,7 @@ class Movie extends Production {
 
   #Setter & getter methods
   public function setProfit($_profit_) {
-    if(is_numeric($_profit_)) {
+    if(is_numeric($_profit_) && $_profit_ > 0) {
       $this->profit = number_format($_profit_, 2, ',', '.') . ' €';
     } else {
       $this->profit = 'profit not found or not valid';
