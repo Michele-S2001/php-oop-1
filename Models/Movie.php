@@ -48,7 +48,8 @@ class Movie extends Production {
 
   public function getAdditionInfos() {
     return [
-      'duration' => $this->duration
+      'duration' => $this->duration,
+      'profit' => $this->profit
     ];
   }
 }
