@@ -15,10 +15,9 @@ class Production {
 
   #Setter & getter methods
   public function setRating($_rate) {
-    $int_rate = intval($_rate);
     
-    if($int_rate !== 0 && $int_rate <= 10) {
-      $stars_number = intval($int_rate / 2); 
+    if(is_numeric($_rate) && $_rate <= 10 && $_rate >= 0) {
+      $stars_number = intval($_rate / 2); 
       $this->rating = $stars_number;
     } else {
       $this->rating = 0;
@@ -70,12 +69,12 @@ class Production {
   }
 }
   
-  $film1 = new Production('Sully: Miracle On The Hudson', 'en', 8.2);
-  $film2 = new Production('Interstellar', 'en', 7);
-  $film3 = new Production('The Great Hack', 'en', 10);
-  $film4 = new Production('La Vita è Bella', 'it', 8.7);
+$film1 = new Production('Sully: Miracle On The Hudson', 'en', 8.2);
+$film2 = new Production('Interstellar', 'en', 7);
+$film3 = new Production('The Great Hack', 'en', 10);
+$film4 = new Production('La Vita è Bella', 'it', 8.7);
   
-  $films = [
+$films = [
   $film1,
   $film2,
   $film3,
