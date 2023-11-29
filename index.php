@@ -1,12 +1,15 @@
 <?php
 require_once __DIR__ . '/Models/Production.php';
 require_once __DIR__ . '/Models/Movie.php';
+require_once __DIR__ . '/Models/Serie.php';
 
 $film_1 = new Movie('una notte al museo', 'en', 6.8, 2345000.53 , 180);
+$serie_1 = new Serie('la casa di carta', 'es', 8.9, 5);
 
 $productions = [
   #films & series
-  $film_1
+  $film_1,
+  $serie_1
 ];
 ?>
 
