@@ -51,9 +51,16 @@ $productions = [
             <ul class="film-details">
               <li><?= $prod->getLanguage() ?></li>
               <li><?= $prod->spawnStars() ?></li>
+              <li>
+                <?php if(get_class($prod) === 'Movie') {
+                  echo $prod->getDuration();
+                } else {
+                  echo $prod->getSeasons();
+                }?>
+              </li>
             </ul>
           </div>
-        <?php } ?>
+        <?php var_dump($prod); } ?>
 
       </div>
     </div>
