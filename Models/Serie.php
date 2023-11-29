@@ -34,7 +34,7 @@ class Serie extends Production {
 
   public function getAdditionInfos() {
     return [
-      'season' => $this->seasons,
+      'season' => $this->getSeasons(),
     ];
   }
 }
